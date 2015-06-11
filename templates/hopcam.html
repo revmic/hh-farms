@@ -3,9 +3,16 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Hopcam
-            <small>for the voyeur in all of us</small>
-        </h1>
+        <div>
+        <h1 class="page-header dark">Hopcam
+            <small>for the Peeping Tom in all of us</small>
+        </h1></div>
+        <div class="pull-right">
+            <p class="pull-left">camera status </p>
+{#            <i class="fa fa-thumbs-down" style="color:red"></i>#}
+            <i class="fa fa-thumbs-up" style="color:green"></i>
+{#            <i class="fa fa-question-circle" style="color:orange"></i>#}
+        </div>
 {#        <ol class="breadcrumb">#}
 {#            <li><a href="index1.html">Home</a>#}
 {#            </li>#}
@@ -23,16 +30,14 @@
         <p>Now</p>
     </div>
     <div class="col-md-5">
-        <a href="blog-post.html">
-            <img class="img-responsive img-hover" src="http://placehold.it/600x300" alt="">
+        <a data-toggle="modal" data-target="#modal1">
+            <img class="img-responsive img-hover" src="{{ url_for('static', filename='img/current-thumb.jpg') }}" alt="">
         </a>
     </div>
     <div class="col-md-6">
-        <h3>
-            <a href="blog-post.html">Current Snapshot</a>
-        </h3>
-        </p>
-        <p>Here's a shot from within the past minute. I'm considering a live stream, but let's get these hops healthy first!</p>
+        <h3 class="dark">Recent Snapshot</h3>
+        <p> Here's a shot from within the past minute. I'm considering a live stream,
+            but let's get these hops healthy first!</p>
 {#        <a class="btn btn-primary" href="blog-post.html">Read More <i class="fa fa-angle-right"></i></a>#}
     </div>
 </div>
@@ -48,55 +53,52 @@
         <p>June 17, 2014</p>
     </div>
     <div class="col-md-5">
-        <a href="blog-post.html">
-            <img class="img-responsive img-hover" src="http://placehold.it/600x300" alt="">
+        <a href="#">
+            <img class="img-responsive img-hover" src="{{ url_for('static', filename='img/current-thumb2.jpg') }}" alt="">
         </a>
     </div>
     <div class="col-md-6">
-        <h3><a href="blog-post.html">Blog Post Title</a>
+        <h3><a href="#" class="dark">Timelapse Videos</a>
         </h3>
+        <p> I enjoy a good timelapse video as much as the next guy.
+            We'll include the most recent day and others that we deem notable.
+            The whole operation nearly looks simple at these speeds...
         </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        <a class="btn btn-primary" href="blog-post.html">Read More <i class="fa fa-angle-right"></i></a>
+        <a class="btn btn-primary" href="#">More Videos <i class="fa fa-angle-right"></i></a>
     </div>
 </div>
 <!-- /.row -->
 
 <hr>
 
-<!-- Blog Post Row -->
-<div class="row">
-    <div class="col-md-1 text-center">
-        <p><i class="fa fa-file-text fa-4x"></i>
-        </p>
-        <p>June 17, 2014</p>
-    </div>
-    <div class="col-md-5">
-        <a href="blog-post.html">
-            <img class="img-responsive img-hover" src="http://placehold.it/600x300" alt="">
-        </a>
-    </div>
-    <div class="col-md-6">
-        <h3><a href="blog-post.html">Blog Post Title</a>
-        </h3>
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        <a class="btn btn-primary" href="blog-post.html">Read More <i class="fa fa-angle-right"></i></a>
-    </div>
-</div>
-<!-- /.row -->
+<!-- Current Image Modal -->
+<div class="modal fade" id="modal1" tabindex="-1" role="img" aria-labelledby="LABEL" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+        <img class="img-responsive" src="{{ url_for('static', filename='img/current-full.jpg') }}" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-<hr>
 
 <!-- Pager -->
-<div class="row">
-    <ul class="pager">
-        <li class="previous"><a href="#">&larr; Older</a>
-        </li>
-        <li class="next"><a href="#">Newer &rarr;</a>
-        </li>
-    </ul>
-</div>
+{#<div class="row">#}
+{#    <ul class="pager">#}
+{#        <li class="previous"><a href="#">&larr; Older</a>#}
+{#        </li>#}
+{#        <li class="next"><a href="#">Newer &rarr;</a>#}
+{#        </li>#}
+{#    </ul>#}
+{#</div>#}
 <!-- /.row -->
 
 {% endblock %}

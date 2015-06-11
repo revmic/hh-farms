@@ -26,12 +26,12 @@ def hopcam():
     return render_template('hopcam.html')
 
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
     if form.validate_on_submit():
         flash("Email send action", "success")
-        return redirect(url_for('main.contact'))
+        return redirect(url_for('contact'))
     return render_template('contact.html', form=form)
 
 

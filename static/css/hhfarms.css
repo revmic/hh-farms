@@ -24,6 +24,10 @@ h6 {
     letter-spacing: 1px;
 }
 
+.dark {
+    color: #1a354d;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -38,14 +42,27 @@ h6 {
     margin-bottom: 20px;
     padding: 10px 25px 20px 20px;
     background: #ffffff;
+    opacity: 0.9;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 4px;
-    opacity: 0.9
 }
 
 .logo {
     position:relative;
     top:-15px
+}
+
+@media(max-width:767px) {
+    .navbar-brand {
+        font-family: 'Fredericka the Great', cursive;
+        font-size: 25px;
+        height: 50px;
+        padding-top: 20px;
+    }
+
+    .logo {
+        height: 40px;
+    }
 }
 
 /* Bootstrap Overrides */

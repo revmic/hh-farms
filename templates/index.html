@@ -3,7 +3,7 @@
 {% block content %}
 
 <div>
-    <img class="img-responsive" src="{{ url_for('static', filename='img/current.jpg') }}" alt="">
+    <img class="img-responsive" src="{{ url_for('static', filename='img/banner.jpg') }}" alt="">
 </div>
 
 <br><br>
@@ -12,8 +12,8 @@
     <h3>About Us</h3>
     <hr>
     <p> We're a startup hopyard in Edwardsville Illinois with 360 plants living on about a quarter acre.
-        We went from discussing our farming possibilities over breakfast on a Sunday morning to having all the infrastructure in place and every plant in the ground within the week, and this is on top of our pesky full time jobs).
-        You can read more about our <a href="#">hopyard setup</a> over at our <a href="#">posts.</a></p>
+        We went from discussing our farming possibilities over breakfast on a Sunday morning to having all the infrastructure in place and every plant in the ground within the week (this is on top of our pesky full time jobs).
+        You can read more about our <a href="#">hopyard setup</a> over at our <a href="{{ url_for('posts') }}">posts.</a></p>
     <p>Feel free to <a href="{{ url_for('contact') }}">contact us</a> with any questions or comments. We'd love to hear from you!</p>
 </div>
 
