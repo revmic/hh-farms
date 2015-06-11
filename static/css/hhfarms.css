@@ -24,6 +24,10 @@ h6 {
     letter-spacing: 1px;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .dark {
     color: #1a354d;
 }
