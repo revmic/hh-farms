@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <img class="img-responsive" src="{{ url_for('static', filename='img/current.jpg') }}" alt="">
+</div>
+
+<br><br>
+
+<div class="box">
+    <h3>About Us</h3>
+    <hr>
+    <p> We're a startup hopyard in Edwardsville Illinois with 360 plants living on about a quarter acre.
+        We went from discussing our farming possibilities over breakfast on a Sunday morning to having all the infrastructure in place and every plant in the ground within the week, and this is on top of our pesky full time jobs).
+        You can read more about our <a href="#">hopyard setup</a> over at our <a href="#">posts.</a></p>
+    <p>Feel free to <a href="{{ url_for('contact') }}">contact us</a> with any questions or comments. We'd love to hear from you!</p>
+</div>
+
+<div class="box">
+    <h3>Recent News</h3>
+    <hr>
+    <p>This will contain an excerpt from our most recent posting, news, event, whatever.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+    <div class="row text-right">
+        <a href="#" class="btn btn-default">Continue Reading</a>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3>
+            Our Varieties
+        </h3>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><i class="fa fa-fw fa-check"></i> Centennial</h4>
+            </div>
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                <a href="#" class="btn btn-default pull-right">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><i class="fa fa-fw fa-gift"></i> Mount Hood</h4>
+            </div>
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                <a href="#" class="btn btn-default pull-right">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><i class="fa fa-fw fa-compass"></i> Willamette</h4>
+            </div>
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                <a href="#" class="btn btn-default pull-right">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

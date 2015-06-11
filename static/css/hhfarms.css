@@ -1,0 +1,65 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,sans-serif;
+    background: url('../img/hops-bg-30.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-top: 60px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. */
+    margin-bottom: 60px; /* Set to the same value as footer height */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    opacity: 0.5;
+    padding-top: 20px;
+}
+
+.box {
+    margin-bottom: 20px;
+    padding: 10px 25px 20px 20px;
+    background: #ffffff;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    opacity: 0.9
+}
+
+.logo {
+    position:relative;
+    top:-15px
+}
+
+/* Bootstrap Overrides */
+.navbar-brand {
+    font-family: 'Fredericka the Great', cursive;
+  /*font-size: 18px;*/
+    font-size: 35px;
+  /*height: 50px;*/
+    height: 60px;
+    padding-top: 20px;
+}
+
+.nav > li > a {
+    padding-top: 20px;
+    font-size: large;
+    height: 60px;
+}
