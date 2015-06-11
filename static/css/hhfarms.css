@@ -11,7 +11,7 @@ body {
     background-size: cover;
     -o-background-size: cover;
     padding-top: 60px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. */
-    margin-bottom: 60px; /* Set to the same value as footer height */
+    margin-bottom: 70px; /* Set to the same value as footer height */
 }
 
 h1,
@@ -32,7 +32,7 @@ h6 {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 70px;
     background-color: #ffffff;
     opacity: 0.5;
     padding-top: 20px;
@@ -52,20 +52,6 @@ h6 {
     top:-15px
 }
 
-@media(max-width:767px) {
-    .navbar-brand {
-        font-family: 'Fredericka the Great', cursive;
-        font-size: 25px;
-        height: 50px;
-        padding-top: 20px;
-    }
-
-    .logo {
-        height: 40px;
-    }
-}
-
-/* Bootstrap Overrides */
 .navbar-brand {
     font-family: 'Fredericka the Great', cursive;
   /*font-size: 18px;*/
@@ -75,8 +61,36 @@ h6 {
     padding-top: 20px;
 }
 
+.navbar-brand > a {
+    color: white
+}
+
 .nav > li > a {
     padding-top: 20px;
     font-size: large;
     height: 60px;
+}
+
+@media screen and (max-width:767px) {
+    .logo {
+        height: 44px;
+    }
+
+    .navbar-brand {
+        font-family: 'Fredericka the Great', cursive;
+        font-size: 25px;
+        height: 40px;
+        padding-top: 20px;
+    }
+
+    .navbar-brand > a {
+        position: relative;
+        top: -5px;
+    }
+
+    .nav > li > a {
+        padding-top: 15px;
+        font-size: medium;
+        height: 50px;
+    }
 }

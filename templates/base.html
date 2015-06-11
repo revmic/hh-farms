@@ -42,11 +42,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <a class="navbar-brand img-hover" href="{{ url_for('index') }}">
-                    <img class="pull-left logo" src="{{ url_for('static', filename='img/logo.png') }}">
-                    H&H Farms
-                </a>
+                <div class="navbar-brand">
+                    <a class="img-hover" href="{{ url_for('index') }}">
+                        <img class="pull-left logo" src="{{ url_for('static', filename='img/logo.png') }}">
+                        H&H Farms
+                    </a>
+                </div>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -88,10 +89,7 @@
         </div>
     </footer>
 
-    <!-- jQuery -->
     <script src="../static/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
     <script src="../static/js/bootstrap.min.js"></script>
 
     <!-- Script to Activate the Carousel -->
