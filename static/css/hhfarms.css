@@ -56,6 +56,15 @@ a:hover {
     top:-15px
 }
 
+.logo:hover {
+
+}
+
+.navbar-default {
+  background-color: #b6b6b6;
+  border-color: white;
+}
+
 .navbar-brand {
     font-family: 'Fredericka the Great', cursive;
   /*font-size: 18px;*/

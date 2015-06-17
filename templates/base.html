@@ -10,7 +10,6 @@
     <meta name="author" content="">
 
     <title>H&H Farms</title>
-
     <!-- Styles -->
     <link href="../static/css/bootstrap.css" rel="stylesheet">
     <link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -53,8 +52,8 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="{{ url_for('posts') }}">Posts</a></li>
                     <li><a href="{{ url_for('hopcam') }}">Hopcam</a></li>
+                    <li><a href="{{ url_for('posts') }}">Posts</a></li>
                     <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 </ul>
             </div>
@@ -95,6 +94,12 @@
 
     <!-- Activate navbar hiding -->
     <script>$(".navbar-fixed-top").autoHidingNavbar();</script>
+{#    <script>#}
+{#        $(document).ready( function() {#}
+{#            $(".navbar-fixed-top").autoHidingNavbar();#}
+{#        });#}
+{#    </script>#}
+
 
 </body>
 

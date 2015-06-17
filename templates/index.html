@@ -18,21 +18,22 @@
 </div>
 
 <div class="box">
-    <h3>Recent News</h3>
+    <h3>Recent News <span class="small">June 17, 2015</span></h3>
     <hr>
-    <p>This will contain an excerpt from our most recent posting, news, event, whatever.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+    <p>We're working hard on getting our hops happy and getting the website together. We've recently discovered that deer do, in fact, like eating hop leaves at least somewhat. And on the same day, we found our first Japanese Beetle lurking about.</p>
+    <p>In the meantime, enjoy a <a href="{{ url_for('hopcam') }}">timelapse video</a> or two of the hopyard.</p>
     <div class="row text-left">
-        <a href="#" class="btn btn-default">Continue Reading</a>
+        <a href="#" class="btn btn-default disabled">Continue Reading</a>
     </div>
-
 </div>
 
 <div class="row">
-    <div class="col-lg-12">
-        <h3>
-            Our Varieties
-        </h3>
+    <div class="col-md-12">
+        <div class="row">
+            <img class="pull-left" src="{{ url_for('static', filename='img/hop-icon.png') }}" width="32" height="32" style="position:relative;top:15px;left:5px">
+            <h3 class="pull-left">Our Varieties</h3>
+            <p class="text-muted pull-left" style="position:relative; top:25px"> (from <a href="https://en.wikipedia.org/wiki/List_of_hop_varieties" target="_blank">Wikipedia</a>)</p>
+        </div>
     </div>
     <div class="col-md-4">
         <div class="panel panel-default">
@@ -40,30 +41,30 @@
                 <h4><i class="fa fa-fw fa-check"></i> Centennial</h4>
             </div>
             <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                <a href="#" class="btn btn-default">Learn More</a>
+                <p>American aroma-type variety bred in 1974 and released in September 1990 by S.T. Kenny and C.E. Zimmermann, the breeders of this variety. Similar to Cascade and Chinook. The genetic composition is 3/4 Brewers Gold, 3/32 Fuggle, 1/6 East kent Golding, 1/32 Bavarian and 1/16 Unknown. One of the "Three Cs" along with Cascade and Columbus. Centennial is often referred to as a 'Super Cascade', since it has a strong citrus aroma.</p>
+                <a href="#" class="btn btn-default disabled">Learn More</a>
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4><i class="fa fa-fw fa-gift"></i> Mount Hood</h4>
+                <h4><i class="fa fa-fw fa-check"></i> Mount Hood</h4>
             </div>
             <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                <a href="#" class="btn btn-default">Learn More</a>
+                <p>Soft American variety developed from Hallertau. Frequently used in styles that require only a subtle hop aroma (German/American lagers). Named for Mount Hood in Oregon. Substitutes: Liberty, Hallertau, Crystal.</p>
+                <a href="#" class="btn btn-default disabled">Learn More</a>
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4><i class="fa fa-fw fa-compass"></i> Willamette</h4>
+                <h4><i class="fa fa-fw fa-check"></i> Willamette</h4>
             </div>
             <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                <a href="#" class="btn btn-default">Learn More</a>
+                <p>Popular American development in 1976 of the English Fuggle. Named for the Willamette Valley, an important hop-growing area. It has a character similar to Fuggle, but is more fruity and has some floral notes. Used in British and American ales. A recent taste-test comparison between Ahtanum and Willamette has described some similarity between the varieties.</p>
+                <a href="#" class="btn btn-default disabled">Learn More</a>
             </div>
         </div>
     </div>
