@@ -39,11 +39,25 @@ def hopcam():
               'search=yesterday&fields=id,title,description,embed_url,' \
               'thumbnail_480_url,views_total'
     r = requests.get(yda_uri)
+    print(r.json())
     # Get last item in list in case there are multiples (prev delete failed)
     try:
         yda_video = get_list(r)[-1]
     except IndexError as e:
         yda_video = {'title': "Sorry. Couldn't find yesterday's video :'("}
+        print('IndexError - ', e)
+
+    if 'Sorry' in yda_video['title']:  # Try again, rummage through all videos
+        print("trying again")
+        uri = 'https://api.dailymotion.com/videos?owners=revmic&' \
+              'fields=id,title,description,embed_url,' \
+              'thumbnail_480_url,views_total'
+        videos = get_list(requests.get(uri))
+        print(videos)
+
+        for v in videos:
+            if v['title'].lower() == 'yesterday':
+                yda_video = v
 
     return render_template('hopcam.html', yesterday=yda_video)
 
