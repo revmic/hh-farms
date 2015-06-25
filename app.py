@@ -1,3 +1,6 @@
+import requests
+from requests.exceptions import ConnectionError
+
 from flask import Flask, render_template, url_for, redirect, flash
 from flask_wtf import Form
 from flask.ext.mail import Message, Mail
@@ -31,7 +34,30 @@ def posts():
 
 @app.route('/hopcam')
 def hopcam():
-    return render_template('hopcam.html')
+    # Should return a list with revmic's dailymotion videos entitled 'yesterday'
+    yda_uri = 'https://api.dailymotion.com/videos?owners=revmic&' \
+              'search=yesterday&fields=id,title,description,embed_url,' \
+              'thumbnail_480_url,views_total'
+    r = requests.get(yda_uri)
+    # Get last item in list in case there are multiples (prev delete failed)
+    try:
+        yda_video = get_list(r)[-1]
+    except IndexError as e:
+        yda_video = {'title': "Sorry. Couldn't find yesterday's video :'("}
+
+    return render_template('hopcam.html', yesterday=yda_video)
+
+
+@app.route('/hopcam/timelapse')
+def timelapse():
+    notable_uri = 'https://api.dailymotion.com/playlist/x3wglc/videos?' \
+                  'fields=id,title,description,embed_url,' \
+                  'thumbnail_480_url,views_total'
+    r = requests.get(notable_uri)
+    notable_vids = get_list(r)
+    count = len(notable_vids)
+
+    return render_template('timelapse.html', notable=notable_vids, count=count)
 
 
 @app.route('/contact', methods=['GET', 'POST'])
@@ -83,6 +109,23 @@ def send_email(subject, template, **kwargs):
     # msg.body = render_template(template + '.txt', **kwargs)
     msg.html = render_template(template + '.html', form=ContactForm(), **kwargs)
     mail.send(msg)
+
+
+def get_list(r):
+    try:
+        r.raise_for_status()
+    except ConnectionError as e:
+        print("ConnectionError - ", e)
+    except requests.exceptions.HTTPError as e:
+        print("HttpError - ", e)
+    except requests.exceptions.Timeout as e:
+        print("TimeOut - ", e)
+
+    try:
+        return r.json()['list']
+    except KeyError as e:
+        print("KeyError - ", e)
+        return ''
 
 
 if __name__ == '__main__':

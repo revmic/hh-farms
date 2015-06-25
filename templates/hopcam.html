@@ -2,97 +2,94 @@
 {% block content %}
 
 <style>
+.hero-spacer {
+    margin-top: 30px;
+}
+.hero-feature {
+    margin-bottom: 30px;
+}
 .status-block {
     background-color:white;
+    border: 1px solid gray;
     border-radius:5px;
-    padding:0 5px 0 5px;
-    opacity:0.7
+    padding:0 10px 0 10px;
+    opacity:0.5;
 }
 .status-icon {
     position: relative;
-    top: 5px
+    top: 5px;
+}
+.jumbotron {
+{#    background-color:white;#}
+    padding: 15px;
+    padding-bottom: 50px;
+}
+.jumbotron>p {
+    font-size: medium;
 }
 </style>
 
-<br>
+<!-- Jumbotron Header -->
+<header class="jumbotron hero-spacer">
+    <h2 class="dark">Hopcam <small>for the peeping tom in all of us</small></h2>
 
-<div class="box">
-    <div class="row">
-        <div class="col-lg-12">
-            <div>
-                <h1 class="page-header dark">Hopcam
-                    <small>for the Peeping Tom in all of us</small>
-                </h1>
-            </div>
-            <div class="status-block pull-right" style="border: 1px solid gray;">
-                <p class="pull-left" style="position:relative; top:4px">camera status  </p>
-    {#            <i class="fa fa-thumbs-down status-icon pull-right" style="color:red"></i>#}
-                <i class="fa fa-thumbs-up status-icon pull-right" style="color:green;"></i>
-    {#            <i class="fa fa-question-circle" style="color:orange"></i>#}
-            </div>
+    <p> I enjoy a good timelapse video as much as the next guy (maybe more).
+        The operation almost looks simple at these speeds. I'm considering a live stream,
+        but let's get these hops feeling at home first!
+    </p>
+    <p>
+        <a href ="{{ url_for('timelapse') }}" class="btn btn-primary btn-large pull-left">View timelapse videos!</a>
 
-    {#        <ol class="breadcrumb">#}
-    {#            <li><a href="index1.html">Home</a>#}
-    {#            </li>#}
-    {#            <li class="active">Blog Home Two</li>#}
-    {#        </ol>#}
+        <div class="status-block pull-right">
+            <p class="pull-left" style="position:relative; top:8px; font-size: small">camera status </p>
+{#            <i class="fa fa-thumbs-down status-icon pull-right" style="color:red"></i>#}
+            <i class="status-icon fa fa-thumbs-up fa-2x pull-right" style="color:green;"></i>
+{#            <i class="fa fa-question-circle" style="color:orange"></i>#}
         </div>
-    </div>
-    <!-- /.row -->
+    </p>
+</header>
 
-    <!-- Blog Post Row -->
-    <div class="row">
-        <div class="col-md-1 text-center">
-            <p><i class="fa fa-camera fa-4x"></i>
-            </p>
-            <p>Now</p>
-        </div>
-        <div class="col-md-5">
+<hr>
+
+<!-- Page Features -->
+<div class="row text-center">
+
+    <div class="col-md-6 col-sm-12">
+        <div class="thumbnail">
+            <i class="fa fa-camera fa-4x pull-left"></i> <h3>Current Snapshot</h3>
             <a id="cur_snap" data-toggle="modal" data-target="#current_snapshot">
                 <img class="img-responsive img-hover" src="{{ url_for('static', filename='img/current-thumb.jpg') }}" alt="">
             </a>
-        </div>
-        <div class="col-md-6">
-            <h3 class="dark">Recent Snapshots</h3>
-            <p> Here's a shot from within the past minute. I'm considering a live stream,
-                but let's get these hops feeling at home first!</p>
-    {#        <a class="btn btn-primary" href="blog-post.html">Read More <i class="fa fa-angle-right"></i></a>#}
+            <div class="caption">
+                <p>A snapshot from within the last minute.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#current_snapshot">View Now</button>
+            </div>
         </div>
     </div>
-    <!-- /.row -->
 
-    <hr>
-
-    <!-- Blog Post Row -->
-    <div class="row">
-        <div class="col-md-1 text-center">
-            <p><i class="fa fa-film fa-4x"></i>
-            </p>
-            <p>July 14, 2015</p>
-        </div>
-        <div class="col-md-5">
+    <div class="col-md-6 col-sm-12">
+        <div class="thumbnail">
+            <i class="fa fa-film fa-4x pull-left"></i> <h3>Yesterday's Timelapse</h3>
             <a data-toggle="modal" data-target="#yesterday_timelapse">
                 <img class="img-responsive img-hover" src="{{ url_for('static', filename='img/current-thumb2.jpg') }}" alt="">
             </a>
-        </div>
-        <div class="col-md-6">
-            <h3><a href="#" class="dark">Timelapse Videos</a>
-            </h3>
-            <p> I enjoy a good timelapse video as much as the next guy (maybe more).
-                We'll include the most recent day and others that we deem notable.
-                The whole operation nearly looks simple at these speeds...
-            </p>
-            <a class="btn btn-primary pull-right disabled" href="#">More Videos <i class="fa fa-angle-right"></i></a>
+            <div class="caption">
+                <p>We'll include the most recent day and others that we deem notable.</p>
+                <p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#yesterday_timelapse">View Yesterday</button>
+                    <a href="{{ url_for('timelapse') }}" class="btn btn-default">More Videos</a>
+                </p>
+            </div>
         </div>
     </div>
-    <!-- /.row -->
 
-    <hr>
-</div><!-- /.box -->
+</div><!-- /.row -->
+
+<hr>
 
 <!-- Current Image Modal -->
 <div class="modal fade" id="current_snapshot" role="dialog" tabindex="-1" aria-labelledby="myLabel">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -114,33 +111,19 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title" id="myModalLabel">Timelapse of Yesterday</h4>
+        <h4 class="modal-title" id="myModalLabel">{{ yesterday['description'] }}</h4>
       </div>
       <div class="modal-body text-center">
-        <video width="800" controls>
-            <source src={{ url_for('static', filename='vid/20150614.mp4') }} type="video/mp4">
-{#            <source src={{ url_for('static', filename='vid/20150614.mov') }} type="video/mov">#}
-{#                <source src="test.ogg" type="video/ogg">#}
-            Your browser does not support HTML5 video.
-        </video>
+          <iframe frameborder="0" width="600" height="400" src="//www.dailymotion.com/embed/video/{{ yesterday['id'] }}" allowfullscreen></iframe>
+          <br /><a href="http://www.dailymotion.com/video/{{ yesterday['id'] }}" target="_blank">{{ yesterday['title'] }}</a>
+          <i>by <a href="http://www.dailymotion.com/revmic" target="_blank">revmic</a></i>
       </div>
       <div class="modal-footer">
-          <a href="#" class="btn btn-primary">View Others</a>
+          <a href="{{ url_for('timelapse') }}" class="btn btn-primary">View Others</a>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
-<!-- Pager -->
-{#<div class="row">#}
-{#    <ul class="pager">#}
-{#        <li class="previous"><a href="#">&larr; Older</a>#}
-{#        </li>#}
-{#        <li class="next"><a href="#">Newer &rarr;</a>#}
-{#        </li>#}
-{#    </ul>#}
-{#</div>#}
-<!-- /.row -->
 
 {% endblock %}
