@@ -27,9 +27,25 @@
 .jumbotron>p {
     font-size: medium;
 }
+.embed-container {
+    position: relative;
+    padding-bottom: 56.3%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 </style>
 
-<!-- Jumbotron Header -->
+
 <header class="jumbotron hero-spacer">
     <h2 class="dark">Hopcam <small>for the peeping tom in all of us</small></h2>
 
@@ -114,8 +130,11 @@
         <h4 class="modal-title" id="myModalLabel">{{ yesterday['description'] }}</h4>
       </div>
       <div class="modal-body text-center">
-          <iframe frameborder="0" width="600" height="400" src="//www.dailymotion.com/embed/video/{{ yesterday['id'] }}" allowfullscreen></iframe>
-          <br /><a href="http://www.dailymotion.com/video/{{ yesterday['id'] }}" target="_blank">{{ yesterday['title'] }}</a>
+          <div class="embed-container">
+              <iframe src="//www.dailymotion.com/embed/video/{{ yesterday['id'] }}" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <br />
+          <a href="http://www.dailymotion.com/video/{{ yesterday['id'] }}" target="_blank">{{ yesterday['title'] }}</a>
           <i>by <a href="http://www.dailymotion.com/revmic" target="_blank">revmic</a></i>
       </div>
       <div class="modal-footer">
