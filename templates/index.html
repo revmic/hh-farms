@@ -2,6 +2,16 @@
 
 {% block content %}
 
+<style>
+h3[data-type="hop-icon"] {
+    margin-left:0.5em;
+    text-indent:1.25em;
+    background:url({{ url_for('static', filename='img/hop-icon.png') }});
+    background-size: 26px 26px;
+    background-repeat:no-repeat;
+}
+</style>
+
 <div>
     <img class="img-responsive" src="{{ url_for('static', filename='img/banner_logo.jpg') }}" alt="">
 </div>
@@ -9,16 +19,18 @@
 <br><br>
 
 <div class="box">
-    <h3>About Us</h3>
+    <h3><i class="fa fa-fw fa-beer"></i> About Us</h3>
     <hr>
-    <p> We're a startup hopyard in Edwardsville Illinois with 360 plants living on about a quarter acre.
-        We went from discussing our farming possibilities over breakfast on a Sunday morning to having all the infrastructure in place and every plant in the ground within the week (this is on top of our pesky full time jobs).
-        You can read more about our <a href="#">hopyard setup</a> over at our <a href="{{ url_for('posts') }}">posts.</a></p>
+    <p> We're a startup hopyard in Edwardsville Illinois with 360 plants on about a quarter acre.
+        We went from discussing our farming possibilities over breakfast on a Sunday morning to having all the infrastructure
+        in place and every plant in the ground within the week (this is on top of our pesky full time jobs).
+{#        You can read more about our <a href="#">hopyard setup</a> over at our <a href="{{ url_for('posts') }}">posts.</a>#}
+    </p>
     <p>Feel free to <a href="{{ url_for('contact') }}">contact us</a> with any questions or comments. We'd love to hear from you!</p>
 </div>
 
 <div class="box">
-    <h3>Recent News <span class="small">June 17, 2015</span></h3>
+    <h3><i class="fa fa-fw fa-newspaper-o"></i> Recent News <span class="small">June 17, 2015</span></h3>
     <hr>
     <p>We're working hard on getting our hops happy and getting the website together. We've recently discovered that deer do, in fact, like eating hop leaves. They'll try anything once, at least. And on that same day, we found our first Japanese Beetle lurking about.</p>
     <p>In the meantime, enjoy a <a href="{{ url_for('hopcam') }}">timelapse video</a> or two of the hopyard.</p>
@@ -27,46 +39,45 @@
 {#    </div>#}
 </div>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="row">
-            <img class="pull-left" src="{{ url_for('static', filename='img/hop-icon.png') }}" width="32" height="32" style="position:relative;top:15px;left:5px">
-            <h3 class="pull-left">Our Varieties</h3>
-            <p class="text-muted pull-left" style="position:relative; top:25px"> (from <a href="https://en.wikipedia.org/wiki/List_of_hop_varieties" target="_blank">Wikipedia</a>)</p>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4><i class="fa fa-fw fa-check"></i> Centennial</h4>
-            </div>
-            <div class="panel-body">
-                <p>American aroma-type variety bred in 1974 and released in September 1990 by S.T. Kenny and C.E. Zimmermann, the breeders of this variety. Similar to Cascade and Chinook. The genetic composition is 3/4 Brewers Gold, 3/32 Fuggle, 1/6 East kent Golding, 1/32 Bavarian and 1/16 Unknown. One of the "Three Cs" along with Cascade and Columbus. Centennial is often referred to as a 'Super Cascade', since it has a strong citrus aroma.</p>
-                <a href="#" class="btn btn-default disabled">Learn More</a>
+<div class="box">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <h3 data-type="hop-icon"> Our Varieties <span class="text-muted small">(from <a href="https://en.wikipedia.org/wiki/List_of_hop_varieties" target="_blank">Wikipedia</a>)</span></h3>
+{#                <p class="text-muted"> (from <a href="https://en.wikipedia.org/wiki/List_of_hop_varieties" target="_blank">Wikipedia</a>)</p>#}
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4><i class="fa fa-fw fa-check"></i> Mount Hood</h4>
-            </div>
-            <div class="panel-body">
-                <p>Soft American variety developed from Hallertau. Frequently used in styles that require only a subtle hop aroma (German/American lagers). Named for Mount Hood in Oregon. Substitutes: Liberty, Hallertau, Crystal.</p>
-                <a href="#" class="btn btn-default disabled">Learn More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4><i class="fa fa-fw fa-check"></i> Willamette</h4>
-            </div>
-            <div class="panel-body">
-                <p>Popular American development in 1976 of the English Fuggle. Named for the Willamette Valley, an important hop-growing area. It has a character similar to Fuggle, but is more fruity and has some floral notes. Used in British and American ales. A recent taste-test comparison between Ahtanum and Willamette has described some similarity between the varieties.</p>
-                <a href="#" class="btn btn-default disabled">Learn More</a>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-check"></i> Centennial</h4>
+                </div>
+                <div class="panel-body">
+                    <p>American aroma-type variety bred in 1974 and released in September 1990 by S.T. Kenny and C.E. Zimmermann, the breeders of this variety. Similar to Cascade and Chinook. The genetic composition is 3/4 Brewers Gold, 3/32 Fuggle, 1/6 East kent Golding, 1/32 Bavarian and 1/16 Unknown. One of the "Three Cs" along with Cascade and Columbus. Centennial is often referred to as a 'Super Cascade', since it has a strong citrus aroma.</p>
+                </div>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-check"></i> Mount Hood</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Soft American variety developed from Hallertau. Frequently used in styles that require only a subtle hop aroma (German/American lagers). Named for Mount Hood in Oregon. Substitutes: Liberty, Hallertau, Crystal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-check"></i> Willamette</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Popular American development in 1976 of the English Fuggle. Named for the Willamette Valley, an important hop-growing area. It has a character similar to Fuggle, but is more fruity and has some floral notes. Used in British and American ales. A recent taste-test comparison between Ahtanum and Willamette has described some similarity between the varieties.</p>
+                </div>
+            </div>
+        </div>
+{#        <a href="#" class="btn btn-default disabled pull-right">Learn More</a>#}
     </div>
 </div>
 

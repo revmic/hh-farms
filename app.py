@@ -10,17 +10,12 @@ from wtforms.validators import Required
 from config import *
 
 app = Flask(__name__)
-mail = Mail(app)
-app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'mhilema@gmail.com'
-app.config['MAIL_PASSWORD'] = '8qar9wor'
-# mail.init_app(app)
+app.config.from_object(__name__)
 app.config['SECRET_KEY'] = SECRET_KEY
+mail = Mail(app)
 
 
-""" VIEWS """
+# VIEWS #
 @app.route('/index')
 @app.route('/')
 def index():
@@ -40,8 +35,9 @@ def hopcam():
               'thumbnail_480_url,views_total'
     r = requests.get(yda_uri)
     print(r.json())
-    # Get last item in list in case there are multiples (prev delete failed)
+
     try:
+        # Get last item in list in case there are multiples (prev delete failed)
         yda_video = get_list(r)[-1]
     except IndexError as e:
         yda_video = {'title': "Sorry. Couldn't find yesterday's video :'("}
@@ -90,13 +86,13 @@ def contact():
                   "Sorry about this!", "error")
         else:
             flash("Your message was sent successfully. "
-                  "I'll get back to you soon!", "success")
+                  "We'll get back to you soon!", "success")
         return redirect(url_for('contact'))
 
     return render_template("contact.html", title='Contact', form=form)
 
 
-""" FORMS """
+# FORMS #
 class ContactForm(Form):
     name = TextField('Name', validators=[Required(message="Required")])
     email = TextField('Email', validators=[
@@ -106,17 +102,11 @@ class ContactForm(Form):
     send = SubmitField('Send')
 
 
-""" MODELS """
+# MODELS #
 
 
-""" HELPERS """
+# HELPERS #
 def send_email(subject, template, **kwargs):
-    MAIL_SERVER = 'smtp.googlemail.com'
-    MAIL_PORT = 587
-    MAIL_USE_TLS = True
-    MAIL_USERNAME = 'mhilema@gmail.com'
-    MAIL_PASSWORD = '8qar9wor'
-
     msg = Message('[HH-Farms] ' + subject,
                   sender='mhilema@gmail.com',
                   recipients=['mhilema@gmail.com'])
