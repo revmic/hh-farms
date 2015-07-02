@@ -2,47 +2,7 @@
 {% block content %}
 
 <style>
-.hero-spacer {
-    margin-top: 30px;
-}
-.hero-feature {
-    margin-bottom: 30px;
-}
-.status-block {
-    background-color:white;
-    border: 1px solid gray;
-    border-radius:5px;
-    padding:0 10px 0 10px;
-    opacity:0.5;
-}
-.status-icon {
-    position: relative;
-    top: 5px;
-}
-.jumbotron {
-    background-color:white;
-    padding: 10px;
-    padding-bottom: 70px;
-}
-.jumbotron>p {
-    font-size: medium;
-}
-.embed-container {
-    position: relative;
-    padding-bottom: 56.3%;
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-}
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+
 </style>
 
 
@@ -72,30 +32,30 @@
 
     <div class="col-md-6 col-sm-12">
         <div class="thumbnail">
-            <i class="fa fa-camera fa-4x pull-left"></i> <h3>Current Snapshot</h3>
-            <a id="cur_snap" data-toggle="modal" data-target="#current_snapshot">
+            <h3><i class="fa fa-camera" style="color:darkgray"></i> Current Snapshot</h3>
+            <a data-toggle="modal" data-target="#current_snapshot">
                 <img class="img-responsive img-hover" src="{{ url_for('static', filename='img/current-thumb.jpg') }}" alt="">
             </a>
             <div class="caption">
                 <p>A snapshot from within the last minute.</p>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#current_snapshot">View Now</button>
             </div>
+            <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#current_snapshot">View Now</button></p>
         </div>
     </div>
 
     <div class="col-md-6 col-sm-12">
         <div class="thumbnail">
-            <i class="fa fa-film fa-4x pull-left"></i> <h3>Yesterday's Timelapse</h3>
+            <h3><i class="fa fa-film" style="color:darkgray"></i> Yesterday's Timelapse</h3>
             <a data-toggle="modal" data-target="#yesterday_timelapse">
                 <img class="img-responsive img-hover" src="{{ url_for('static', filename='img/current-thumb2.jpg') }}" alt="">
             </a>
             <div class="caption">
-                <p>We'll include the most recent day and others that we deem notable.</p>
-                <p>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#yesterday_timelapse">View Yesterday</button>
-                    <a href="{{ url_for('timelapse') }}" class="btn btn-default">More Videos</a>
-                </p>
+                <p>See what went on yesterday.</p>
             </div>
+            <p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#yesterday_timelapse">View Yesterday</button>
+                <a href="{{ url_for('timelapse') }}" class="btn btn-default">More Videos</a>
+            </p>
         </div>
     </div>
 

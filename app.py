@@ -92,6 +92,11 @@ def contact():
     return render_template("contact.html", title='Contact', form=form)
 
 
+@app.route('/posts/varieties')
+def varieties():
+    return render_template("varieties.html", title="Varieties")
+
+
 # FORMS #
 class ContactForm(Form):
     name = TextField('Name', validators=[Required(message="Required")])

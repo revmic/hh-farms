@@ -52,6 +52,16 @@ a:hover {
     border-radius: 4px;
 }
 
+.box-small {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0 15px 0 15px;
+    background: #ffffff;
+    opacity: 0.9;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+}
+
 .logo {
     position:relative;
     top:-15px
@@ -84,6 +94,64 @@ a:hover {
     font-size: large;
     height: 60px;
 }
+
+.hero-spacer {
+    margin-top: 30px;
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
+.status-block {
+    background-color:white;
+    border: 1px solid gray;
+    border-radius:5px;
+    padding:0 10px 0 10px;
+    opacity:0.5;
+}
+
+.status-icon {
+    position: relative;
+    top: 5px;
+}
+
+.jumbotron {
+    background-color:white;
+    padding: 10px;
+    padding-bottom: 70px;
+}
+
+.jumbotron>p {
+    font-size: medium;
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.3%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.breadcrumb {
+  background-color: #efefef;
+}
+
+.panel-body>p {
+    font-size: small;
+}
+
 
 @media screen and (max-width:767px) {
     .logo {
